@@ -1,0 +1,29 @@
+services:
+
+  API:
+
+    container_name: fastapi_container
+
+    build: ./api
+
+    ports:
+      - 8000:8000
+  
+  redis:
+
+    container_name: redis_db_container
+
+    image: redis:latest
+
+    ports:
+      - "6379:6379"
+
+  #nginx:
+
+  #  image: nginx:latest
+
+  #  ports:
+  #    - "80:80"
+
+
+
