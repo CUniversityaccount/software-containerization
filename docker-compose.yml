@@ -1,6 +1,6 @@
 services:
 
-  API:
+  api:
 
     container_name: fastapi_container
 
