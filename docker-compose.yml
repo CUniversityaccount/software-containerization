@@ -1,11 +1,12 @@
 services:
 
-  API:
+  api:
 
     container_name: fastapi_container
 
     build: ./api
-
+    environment:
+      PORT: 8000
     ports:
       - 8000:8000
   
