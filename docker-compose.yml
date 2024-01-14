@@ -5,7 +5,10 @@ services:
     container_name: fastapi_container
 
     build: ./api
-
+    environment:
+      PORT: 8000
+      REDIS_PORT: 6379
+      REDIS_HOST: redis_db_container
     ports:
       - 8000:8000
   

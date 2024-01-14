@@ -1,12 +1,9 @@
+FROM python:3.11
+WORKDIR /code
 
-FROM python:slim
+COPY ./requirements.txt /code/requirements.txt
 
-RUN apt update
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
-RUN apt install -y python3-pip
-
-#make requirements txt if adding/having more pip installs
-RUN pip install "fastapi[all]"
-
-#to start api server
-CMD ["uvicorn", "main:app", "--reload"]
+COPY ./app /code/app
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0"]
