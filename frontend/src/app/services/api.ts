@@ -7,7 +7,7 @@ export interface Item {
 
 // Create our baseQuery instance
 const baseQuery = fetchBaseQuery({
-  baseUrl: import.meta.env.VITE_API_URL,
+  baseUrl: `${import.meta.env.VITE_API_URL}/api`,
 });
 
 /**

@@ -1,27 +1,21 @@
 import asyncio
-import redis.asyncio as redis
+from motor.motor_asyncio import AsyncIOMotorClient
 from typing import List
 from .config import Settings
 from .models import Item
 
-class RedisDB:
+class MongoDB:
     def __init__(self) -> None:
         settings = Settings()
-        print(settings)
-        self.redis = redis.Redis(
-            host=settings.redis_host, 
-            port=6379,
-            decode_responses=True)
+        self.client = AsyncIOMotorClient(settings.mongo_url).services
         pass
 
     async def get_all(self):
-        keys = await self.redis.keys()
-        if len(keys) <= 0:
-            return []
-        tasks = [asyncio.create_task(self.redis.get(key)) for key in keys]
-        await asyncio.wait(tasks, return_when=asyncio.ALL_COMPLETED)
-        return [{ "key": key, "value": t.result() } for key, t in zip(keys, tasks)]
+        print(self.client)
+        return [Item(**item) for item in await self.client["values"].find().to_list(length=1000) ]
 
     async def post(self, item : Item):
-        return await self.redis.set(item.key, item.value)
+        # TODO: Add index when the db is created
+        await self.client["values"].create_index("key", unique=True)
+        await self.client["values"].insert_one(item.model_dump())
 
