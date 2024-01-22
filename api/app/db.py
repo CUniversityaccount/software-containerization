@@ -10,8 +10,7 @@ class MongoDB:
         self.client = AsyncIOMotorClient(settings.mongo_url).services
         pass
 
-    async def get_all(self):
-        print(self.client)
+    async def get_all(self) -> List(Item):
         return [Item(**item) for item in await self.client["values"].find().to_list(length=1000) ]
 
     async def post(self, item : Item):
