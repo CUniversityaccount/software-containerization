@@ -18,17 +18,17 @@ spec:
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 27017
-          env:
-            - name: MONGO_INITDB_ROOT_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: mongo-db-secret
-                  key: MONGO_INITDB_ROOT_USERNAME
-            - name: MONGO_INITDB_ROOT_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: mongo-db-secret
-                  key: MONGO_INITDB_ROOT_PASSWORD
+          # env:
+          #   - name: MONGO_INITDB_ROOT_USERNAME
+          #     valueFrom:
+          #       secretKeyRef:
+          #         name: mongo-db-secret
+          #         key: MONGO_INITDB_ROOT_USERNAME
+          #   - name: MONGO_INITDB_ROOT_PASSWORD
+          #     valueFrom:
+          #       secretKeyRef:
+          #         name: mongo-db-secret
+          #         key: MONGO_INITDB_ROOT_PASSWORD
           volumeMounts:
             - name: mongo-db-dir
               mountPath: "/data/db"

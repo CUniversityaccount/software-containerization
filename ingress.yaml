@@ -17,7 +17,7 @@ spec:
                 port:
                   number: 80
           # Change to api
-          - path: /items
+          - path: /api/
             pathType: Prefix
             backend:
               service:
