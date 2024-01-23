@@ -1,31 +1,27 @@
 # Containerization course vu
 
-LOREM IPSUM containers.....
+A simple application where people can set key and values into the application.
 
-## Installation
+## Ingress Image
 
-enter main directory
+For minikube or microk8s enable the addon ingress. They use automatically the NGINX igress controller.
 
-compose and build with docker
+For configuring the local DNS see the tutorial for the minikube:
+https://minikube.sigs.k8s.io/docs/handbook/addons/ingress-dns/
 
-```bash
-  docker-compose build
-
-  docker-compose up
+Use the command to update the network manager on ubuntu:
 
 ```
+sudo mv /etc/resolv.conf /etc/resolv.conf.old
+systemctl restart NetworkManager.service
+```
+
+## Applying the services
 
 ## DEADLINE - TO DO
 
-<!-- - 18 - deadline for frontend otherwise @quarti jumps on it
+- 18 - deadline for frontend otherwise @quarti jumps on it
 - unknown - UML @quarti
 - 18 - soft deadline for kubernetes oporting supporting api external access, and horizontal scaling
 - 16 - 8pm heads up on kubernetes material
-- 16 - 8pm heads up on lecture 4 persistant volumes -->
-
-| Deadline | Responsible | Task                             |
-| -------- | ----------- | -------------------------------- |
-| 25-01    | Coen        | Helm Chart                       |
-| 28-01    | Daniele     | Release: Rolling Update & Canary |
-| 28-01    | Daniele     | UML                              |
-| 28-01    | Arindam     | HTTPS and certmanager            |
+- 16 - 8pm heads up on lecture 4 persistant volumes
