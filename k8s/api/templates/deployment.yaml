@@ -23,4 +23,4 @@ spec:
               containerPort: 8000
           env:
             - name: MONGO_URL
-              value: mongodb://mongo-db-service.default.svc.cluster.local/
+              value: mongodb://mongo-test-no-sql-db.default.svc.cluster.local/
