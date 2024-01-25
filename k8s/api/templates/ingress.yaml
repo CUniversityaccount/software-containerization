@@ -1,4 +1,4 @@
-{{- $fullName := include "ui.fullname" . -}}
+{{- $fullName := include "api.fullname" . -}}
 {{- $svcPort := .Values.service.port -}}
 # {{- if .Values.ingress.enabled -}}
 
@@ -66,8 +66,11 @@ kind: Ingress
 metadata:
   name: {{ $fullName }}
   labels:
-    {{- include "ui.labels" . | nindent 4 }}
+    {{- include "api.labels" . | nindent 4 }}
+  {{- with .Values.ingress.annotations }}
   annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
 spec:
   ingressClassName: {{ .Values.ingress.className }}
   tls:

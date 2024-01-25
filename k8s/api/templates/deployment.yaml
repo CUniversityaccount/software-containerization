@@ -19,7 +19,8 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}" 
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
-            - containerPort: 8000
+            - name: http-api
+              containerPort: 8000
           env:
             - name: MONGO_URL
               value: mongodb://mongo-db-service.default.svc.cluster.local/
