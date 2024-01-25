@@ -29,3 +29,6 @@ compose and build with docker
 | 28-01    | Daniele     | Release: Rolling Update & Canary |
 | 28-01    | Daniele     | UML                              |
 | 28-01    | Arindam     | HTTPS and certmanager            |
+
+
+![Screenshot](Sequence_Diagram_drawio.png)
