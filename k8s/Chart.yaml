@@ -25,8 +25,8 @@ appVersion: "1.16.0"
 
 dependencies:
   - name: api-service
-    condition: api-service.enabled
+    condition: api.enabled
   - name: ui-service
-    condition: ui-service.enabled
+    condition: ui.enabled
   - name: no-sql-db
-    condition: no-sql-db.enabled
+    condition: db.enabled
