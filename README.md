@@ -25,8 +25,7 @@ compose and build with docker
 
 | Deadline | Responsible | Task                             |
 | -------- | ----------- | -------------------------------- |
-| 25-01    | Coen        | Helm Chart                       |
-| 28-01    | Daniele     | Release: Rolling Update & Canary |
+| 28-01    | ?           | Release: Rolling Update & Canary |
 | 29-01    | Daniele     | UML                              |
 | 2-02     | Daniele     | HTTPS and certmanager            |
 | 30-01    | Daniele     | Sketch Generic diagram           |
