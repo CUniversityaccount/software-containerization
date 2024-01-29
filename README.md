@@ -27,8 +27,10 @@ compose and build with docker
 | -------- | ----------- | -------------------------------- |
 | 25-01    | Coen        | Helm Chart                       |
 | 28-01    | Daniele     | Release: Rolling Update & Canary |
-| 28-01    | Daniele     | UML                              |
-| 28-01    | Arindam     | HTTPS and certmanager            |
+| 29-01    | Daniele     | UML                              |
+| 2-02     | Daniele     | HTTPS and certmanager            |
+| 30-01    | Daniele     | Sketch Generic diagram           |
+| 31-01    | Daniele     | Sketch Presentation on google    |
 
 
 ![Screenshot](Sequence_Diagram_drawio.png)
