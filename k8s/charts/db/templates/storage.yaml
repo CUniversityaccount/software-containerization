@@ -4,7 +4,7 @@ metadata:
   name: mongo-pv
   labels:
     type: local
-    app: mongo-db
+    {{- include "db.labels" . | nindent 4 }}
 spec:
   storageClassName: microk8s-hostpath
   capacity:
@@ -17,9 +17,10 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: mongo-db-pv-claim
+  name: mongo-pvc
   labels:
-    app: mongo-db
+    {{- include "db.labels" . | nindent 4 }}
+
 spec:
   storageClassName: microk8s-hostpath
   accessModes:
