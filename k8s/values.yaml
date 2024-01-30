@@ -1,8 +1,11 @@
-api-service:
+api:
+  name: api-service
   enabled: true
 
-ui-service:
+ui:
+  name: ui-service
   enabled: true
 
-no-sql-db:
+db:
+  name: no-sql-db
   enabled: true
