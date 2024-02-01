@@ -1,0 +1,56 @@
+
+{{- if .Values.roles.podApplicationReader }}
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: read-application-pods
+  knamespace: default
+subjects:
+# You can specify more than one "subject"
+{{- range .Values.roles.podApplicationReader }}
+- kind: User
+  name: {{ .name }} # "name" is case sensitive
+  apiGroup: rbac.authorization.k8s.io
+{{- end }}
+roleRef:
+# "roleRef" specifies the binding to a Role / ClusterRole
+  kind: Role #this must be Role or ClusterRole
+  name: pod-application-reader # this must match the name of the Role or ClusterRole you wish to bind to
+  apiGroup: rbac.authorization.k8s.io
+{{- end }}
+--- 
+{{- if .Values.roles.applicationManager }}
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: manage-application
+  namespace: default
+subjects:
+# You can specify more than one "subject"
+{{- range .Values.roles.applicationManager }}
+- kind: User
+  name: {{ .name }} # "name" is case sensitive
+  apiGroup: rbac.authorization.k8s.io
+{{- end }}
+roleRef:
+  kind: Role #this must be Role or ClusterRole
+  name: pod-application-reader # this must match the name of the Role or ClusterRole you wish to bind to
+  apiGroup: rbac.authorization.k8s.io
+{{- end }}
+--- 
+{{- if .Values.roles.applicationManager }}
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: global-svc-reader
+subjects:
+{{- range .Values.roles.applicationManager }}
+- kind: User
+  name: {{ .name }} # Name is case sensitive
+  apiGroup: rbac.authorization.k8s.io
+{{- end }}
+roleRef:
+  kind: ClusterRole
+  name: cluster-svc-reader
+  apiGroup: rbac.authorization.k8s.io
+{{- end }}

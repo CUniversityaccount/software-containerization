@@ -22,7 +22,7 @@ spec:
     secretName: {{ .secretName }}
   {{- end }}
   rules:
-    {{- range .Values.ingress.hosts }}
+    {{- range .Values.ingress.hosts }}  
     - host: {{ .host | quote }}
       http:
         paths:

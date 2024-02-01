@@ -8,9 +8,8 @@ spec:
       app.kubernetes.io/name: {{ .Values.ui.name }}
   policyTypes:
   - Ingress
-  - Egress
   ingress: 
     - from:
       - namespaceSelector:
           matchLabels:
-            app.kubernetes.io/name: ingress-nginx
+            kubernetes.io/metadata.name: ingress

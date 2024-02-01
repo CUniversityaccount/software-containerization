@@ -9,3 +9,10 @@ ui:
 db:
   name: no-sql-db
   enabled: true
+
+roles: 
+  podApplicationReader: 
+    - name: lara
+  applicationManager: []
+  clusterReader: 
+    - name: lara
