@@ -37,7 +37,8 @@ compose and build with docker
 ![Screenshot](Deployment_uml_mk2.drawio.png)
 
 | Section                                                          | Responsible |
-| 1 Architecture and Artifacts                                     | Daniele |
-| 2 Pre-requisite                                                  | Kuhn |
-| 3 Container build and first deployment, scaling, uninstallation  | Daniele |
-| 4 Application upgrade and re-deployment                          | Kuhn |
+| ---------------------------------------------------------------- | ----------- |
+| 1 Architecture and Artifacts                                     | Daniele     |
+| 2 Pre-requisite                                                  | Kuhn        |
+| 3 Container build and first deployment, scaling, uninstallation  | Daniele     |
+| 4 Application upgrade and re-deployment                          | Kuhn        |
