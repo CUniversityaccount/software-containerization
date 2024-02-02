@@ -34,4 +34,4 @@ compose and build with docker
 
 ![Screenshot](Sequence_Diagram_drawio.png)
 
-![Screenshot](deployment_uml.drawio.png)
+![Screenshot](Deployment_uml_mk2.drawio.png)
