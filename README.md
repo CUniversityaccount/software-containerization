@@ -1,13 +1,13 @@
 # Containerization course vu
 
-## To build and run everything use  
+## To build and run everything Locally  
 
 ```bash
 chmod +x code_to_run_it.sh
 ./code_to_run_it.sh
 ```
 
-# Docker
+## the script does: 
 
 ### inside the dockerfile folder build the images
 
@@ -33,28 +33,6 @@ push the images to registry
 ```bash
 docker push localhost:32000/api-service:latest
 docker push localhost:32000/ui-service:latest
-```
-
-### List images in microk8s to check that is there
-
-```bash
-microk8s ctr images ls
-```
-
-# Deployment
-
-## Apply deployment of yaml files
-
-To apply a set of yaml files
-
-```bash
-microk8s kubectl apply -f <location>
-```
-
-Otherwise for a single file:
-
-```bash
-microk8s kubectl apply -f <file_location>
 ```
 
 ## Deployment Helm
