@@ -1,18 +1,25 @@
 # Containerization course vu
 
-LOREM IPSUM containers.....
 
-## Installation
-
-enter main directory
-
-compose and build with docker
-
+##inside the dockerfile folder build the images
 ```bash
-  docker-compose build
+docker build -t image_name .
+```
 
-  docker-compose up
+##place the images in microk8s registry
+```bash
+docker save image_name > myimage.tar
+microk8s ctr image import myimage.tar
+```
 
+##List images in microk8s to check that is there
+```bash
+microk8s ctr images ls
+```
+
+##Apply deployment
+```bash
+microk8s kubectl apply -f
 ```
 
 ## DEADLINE - TO DO
