@@ -13,7 +13,9 @@ service:
 ingress:
   className: "nginx"
   annotations: {
-    ingress.kubernetes.io/rewrite-target: /api
+    ingress.kubernetes.io/rewrite-target: /api,
+    cert-manager.io/issuer: self-signed-cluster,
+    cert-manager.io/common-name: service.test
   }
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
@@ -22,4 +24,7 @@ ingress:
       paths:
         - path: /api
           pathType: Prefix
-  tls: []
+  tls:
+   - secretName: api-ingress-secret
+     hosts:
+       - service.test

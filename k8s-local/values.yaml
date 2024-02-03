@@ -16,3 +16,9 @@ roles:
   applicationManager: []
   clusterReader: 
     - name: lara
+
+ingress:
+  tls:
+  - hosts: 
+    - service.example.com
+    secretName: letsencrypt-account-key
