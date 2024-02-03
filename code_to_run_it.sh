@@ -15,4 +15,4 @@ docker tag ui-service:latest localhost:32000/ui-service:latest
 docker push localhost:32000/api-service:latest
 docker push localhost:32000/ui-service:latest
 
-#helm install <release_name> ./k8s/
+helm install my_release_1 ./k8s/
