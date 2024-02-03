@@ -1,10 +1,10 @@
 # Project overview
 
-## Sequence diagram
+### Sequence diagram
 
 ![Screenshot](Sequence_Diagram_drawio.png)
 
-## Deployment diagram
+### Deployment diagram
 
 ![Screenshot](Deployment_uml_mk2.drawio.png)
 
