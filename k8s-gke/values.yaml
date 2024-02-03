@@ -1,0 +1,16 @@
+api:
+  name: api-service
+  enabled: true
+
+ui:
+  name: ui-service
+  enabled: true
+
+db:
+  name: no-sql-db
+  enabled: true
+
+roles: 
+  podApplicationReader: []
+  applicationManager: []
+  clusterReader: []

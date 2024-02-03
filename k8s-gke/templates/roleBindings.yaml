@@ -4,7 +4,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: read-application-pods
-  knamespace: default
+  namespace: default
 subjects:
 # You can specify more than one "subject"
 {{- range .Values.roles.podApplicationReader }}

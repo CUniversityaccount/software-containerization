@@ -1,0 +1,22 @@
+# kind: NetworkPolicy
+# apiVersion: networking.k8s.io/v1
+# metadata:
+#   name: "{{ include "k8s.name" . }}-db-access"
+# spec:
+#   podSelector: 
+#     matchLabels:
+#       app.kubernetes.io/name: {{ .Values.db.name }}
+#   policyTypes:
+#   - Ingress
+#   - Egress
+#   ingress:
+#   - from:
+#     - podSelector:
+#         matchLabels:
+#           app.kubernetes.io/name: {{ .Values.api.name }}
+#   # Deny to send data to outside the cluster
+#   egress: 
+#     - to:
+#       - podSelector:
+#           matchLabels:
+#             app.kubernetes.io/name: {{ .Values.api.name }}
