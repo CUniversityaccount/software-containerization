@@ -1,3 +1,13 @@
+# Project overview
+
+## Sequence diagram
+
+![Screenshot](Sequence_Diagram_drawio.png)
+
+## Deployment diagram
+
+![Screenshot](Deployment_uml_mk2.drawio.png)
+
 # Instructions Local
 
 ## To build and run everything Locally  
@@ -67,9 +77,9 @@ helm uninstall <release_name>
 | 30-01    | Daniele     | Sketch Generic diagram           |
 | 31-01    | Daniele     | Sketch Presentation on google    |
 
-![Screenshot](Sequence_Diagram_drawio.png)
 
-![Screenshot](Deployment_uml_mk2.drawio.png)
+
+
 
 | Section                                                         | Responsible |
 | --------------------------------------------------------------- | ----------- |
