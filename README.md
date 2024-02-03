@@ -61,6 +61,26 @@ To uninstall a release:
 helm uninstall <release_name>
 ```
 
+# Instructions Cloud
+
+## Packaging 
+```bash
+helm package k8s-gke/charts/api/
+```
+## Putting in repo of gcp
+```bash
+helm push k8s-0.1.0.tgz oci://europe-web1-docker.pkg.dev/subtle-backup-413213/software-containerization-repo
+```
+## Installation
+```bash
+helm install k8s-test oci://europe-west1-docker.pkg.dev/subtle-backup
+-413213/software-containerization-repo/api-service --version 0.1.0
+```
+## Uninstallation
+```bash
+helm uninstall k8s-test
+```
+
 ## DEADLINE - TO DO
 
 <!-- - 18 - deadline for frontend otherwise @quarti jumps on it
