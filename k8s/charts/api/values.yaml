@@ -1,7 +1,7 @@
 replicaCount: 3
 
 image:
-  repository: localhost:5000/api-service
+  repository: localhost:32000/api-service
   tag: v1
   pullPolicy: IfNotPresent
 
