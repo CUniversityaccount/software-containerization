@@ -1,5 +1,12 @@
 # Containerization course vu
 
+## To build and run everything use  
+
+```bash
+chmod +x code_to_run_it.sh
+./code_to_run_it.sh
+```
+
 # Docker
 
 ### inside the dockerfile folder build the images
@@ -7,23 +14,25 @@
 To build different docker images you will use the following
 
 ```bash
-docker build -t <image_name> <location_DockerFile>
+docker build -t api-service:latest ./api
+docker build -t ui-service:latest ./frontend
 ```
 
 ### Place the images in microk8s registry
 
-The first way to place the image in the registery.
+tag the images for registry
 
 ```bash
-docker save image_name > myimage.tar
-microk8s ctr image import myimage.tar
+docker tag api-service:latest localhost:32000/api-service:latest
+docker tag ui-service:latest localhost:32000/ui-service:latest
 ```
 
 You can push images to registery of microk8s through:
 
+push the images to registry
 ```bash
-docker tag <image_name> <registery_host>/<image_name>[:<tag>]
-docker push <registery_host>/<image_name>[:<tag>]
+docker push localhost:32000/api-service:latest
+docker push localhost:32000/ui-service:latest
 ```
 
 ### List images in microk8s to check that is there
