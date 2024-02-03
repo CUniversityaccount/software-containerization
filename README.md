@@ -1,4 +1,4 @@
-# Containerization course vu
+# Instructions Local
 
 ## To build and run everything Locally  
 
