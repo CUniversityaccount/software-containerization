@@ -2,22 +2,26 @@
 
 
 ##inside the dockerfile folder build the images
+
 ```bash
 docker build -t image_name .
 ```
 
 ##place the images in microk8s registry
+
 ```bash
 docker save image_name > myimage.tar
 microk8s ctr image import myimage.tar
 ```
 
 ##List images in microk8s to check that is there
+
 ```bash
 microk8s ctr images ls
 ```
 
 ##Apply deployment
+
 ```bash
 microk8s kubectl apply -f
 ```
