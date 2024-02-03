@@ -43,9 +43,7 @@ To install the whole project through Helm use:
 helm install <release_name> ./k8s/
 ```
 
-# Uninstallation
-
-## Helm
+## Uninstallation with helm
 
 To uninstall a release:
 
