@@ -22,17 +22,19 @@ spec:
             - name: http-db
               containerPort: {{ .Values.service.port }}
               protocol: TCP
-          # env:
-          #   - name: MONGO_INITDB_ROOT_USERNAME
-          #     valueFrom:
-          #       secretKeyRef:
-          #         name: mongo-db-secret
-          #         key: MONGO_INITDB_ROOT_USERNAME
-          #   - name: MONGO_INITDB_ROOT_PASSWORD
-          #     valueFrom:
-          #       secretKeyRef:
-          #         name: mongo-db-secret
-          #         key: MONGO_INITDB_ROOT_PASSWORD
+          env:
+            - name: MONGO_INITDB_DATABASE
+              value: admin
+            - name: MONGO_INITDB_ROOT_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "db.fullname" .}}
+                  key: MONGO_INITDB_ROOT_USERNAME
+            - name: MONGO_INITDB_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "db.fullname" .}}
+                  key: MONGO_INITDB_ROOT_PASSWORD
           {{- with .Values.volumeMounts }}
           volumeMounts:
             {{- toYaml . | nindent 12 }}

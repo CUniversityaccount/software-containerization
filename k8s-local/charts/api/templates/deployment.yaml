@@ -22,8 +22,18 @@ spec:
             - name: http-api
               containerPort: 8000
           env:
+            - name: USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "api.fullname" . }}
+                  key: API_USERNAME
+            - name: PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "api.fullname" . }}
+                  key: API_PASSWORD
             - name: MONGO_URL
-              value: "mongodb://{{ .Release.Name }}-no-sql-db.default.svc.cluster.local/"
+              value: "mongodb://$(USERNAME):$(PASSWORD)@{{ .Release.Name }}-no-sql-db.default.svc.cluster.local"
           resources:
             requests:
               cpu: "100m"

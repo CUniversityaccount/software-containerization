@@ -106,6 +106,7 @@ kubectl run -i -n ingress --tty load-generator --rm --image=busybox:1.28 --resta
 ```bash
 kubectl run --rm -i -t --image=alpine test-$RANDOM -n ingress -- sh
 \# wget -qO- http://k8s-test-api-service.default.svc.cluster.local:8081/
+\# wget -qO- http://k8s-test-ui-service.default.svc.cluster.local:8081/
 ```
 
 ## DEADLINE - TO DO
