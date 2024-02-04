@@ -7,11 +7,11 @@ DB is MongoDB.
 
 ### Sequence diagram
 
-![Screenshot](Sequence_Diagram_drawio.png)
+![Screenshot](figures/Sequence_Diagram_drawio.png)
 
 ### Deployment diagram
 
-![Screenshot](deployment_uml_mk3.png)
+![Screenshot](figures/deployment_uml_mk3.png)
 
 # Instructions Local
 
