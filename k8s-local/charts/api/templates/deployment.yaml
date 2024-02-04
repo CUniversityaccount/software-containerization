@@ -24,3 +24,9 @@ spec:
           env:
             - name: MONGO_URL
               value: "mongodb://{{ .Release.Name }}-no-sql-db.default.svc.cluster.local/"
+          resources:
+            requests:
+              cpu: "100m"
+            limits:
+              cpu: "200m"
+          
