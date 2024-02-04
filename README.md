@@ -46,20 +46,36 @@ docker push localhost:32000/api-service:latest
 docker push localhost:32000/ui-service:latest
 ```
 
-## Deployment Helm
+## Deployment Helm Local
 
 To install the whole project through Helm use:
 
 ```bash
-helm install <release_name> ./k8s/
+microk8s.helm install <release_name> ./k8s/
 ```
 
-## Uninstallation with helm
+## Release new version Helm Local
+
+To a rolling update deploymement, do:
+
+```bash
+microk8s.helm upgrade <release_name> ./k8s/
+```
+
+## Rollback Helm Local
+
+To a rolling update deploymement, do:
+
+```bash
+microk8s.helm rollback <release_name>/
+```
+
+## Uninstallation with Helm local
 
 To uninstall a release:
 
 ```bash
-helm uninstall <release_name>
+microk8s.helm uninstall <release_name>
 ```
 
 # Instructions Cloud
@@ -79,8 +95,7 @@ helm push k8s-0.1.0.tgz oci://europe-web1-docker.pkg.dev/subtle-backup-413213/so
 ## Installation
 
 ```bash
-helm install k8s-test oci://europe-west1-docker.pkg.dev/subtle-backup
--413213/software-containerization-repo/api-service --version 0.1.0
+helm install k8s-test oci://europe-west1-docker.pkg.dev/subtle-backup-413213/software-containerization-repo/api-service --version 0.1.0
 ```
 
 ## Uninstallation
