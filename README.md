@@ -6,7 +6,7 @@
 
 ### Deployment diagram
 
-![Screenshot](Deployment_uml_mk2.drawio.png)
+![Screenshot](Deployment_uml_mk3.png)
 
 # Instructions Local
 
