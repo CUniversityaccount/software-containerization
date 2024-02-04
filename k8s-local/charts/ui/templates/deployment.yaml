@@ -9,6 +9,11 @@ spec:
   selector:
     matchLabels:
       {{- include "ui.selectorLabels" . | nindent 6 }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 20%
   template:
     metadata:
       labels:
