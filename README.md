@@ -1,8 +1,11 @@
 # Project overview
 
 Kubernetes project for the course Software Containerization
+
 The API is written in Python FastAPI
+
 The front end is done in React with Typescript
+
 DB is MongoDB.
 
 ### Sequence diagram
