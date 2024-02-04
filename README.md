@@ -1,5 +1,10 @@
 # Project overview
 
+Kubernetes project for the course Software Containerization
+The API is written in Python FastAPI
+The front end is done in React with Typescript
+DB is MongoDB.
+
 ### Sequence diagram
 
 ![Screenshot](Sequence_Diagram_drawio.png)
@@ -123,26 +128,3 @@ kubectl run --rm -i -t --image=alpine test-$RANDOM -n ingress -- sh
 \# wget -qO- http://k8s-test-api-service.default.svc.cluster.local:8081/
 \# wget -qO- http://k8s-test-ui-service.default.svc.cluster.local:8081/
 ```
-
-## DEADLINE - TO DO
-
-<!-- - 18 - deadline for frontend otherwise @quarti jumps on it
-- unknown - UML @quarti
-- 18 - soft deadline for kubernetes oporting supporting api external access, and horizontal scaling
-- 16 - 8pm heads up on kubernetes material
-- 16 - 8pm heads up on lecture 4 persistant volumes -->
-
-| Deadline | Responsible | Task                             |
-| -------- | ----------- | -------------------------------- |
-| 28-01    | ?           | Release: Rolling Update & Canary |
-| 29-01    | Daniele     | UML                              |
-| 2-02     | Daniele     | HTTPS and certmanager            |
-| 30-01    | Daniele     | Sketch Generic diagram           |
-| 31-01    | Daniele     | Sketch Presentation on google    |
-
-| Section                                                         | Responsible |
-| --------------------------------------------------------------- | ----------- |
-| 1 Architecture and Artifacts                                    | Daniele     |
-| 2 Pre-requisite                                                 | Coen        |
-| 3 Container build and first deployment, scaling, uninstallation | Daniele     |
-| 4 Application upgrade and re-deployment                         | Coen        |
