@@ -14,9 +14,15 @@ spec:
     - podSelector:
         matchLabels:
           app.kubernetes.io/name: {{ .Values.api.name }}
-  # Deny to send data to outside the cluster
+  #  Deny to send data to outside the cluster
   egress: 
     - to:
       - podSelector:
           matchLabels:
             app.kubernetes.io/name: {{ .Values.api.name }}
+      # Allow discovery
+      ports:
+      - protocol: TCP
+        port: 53
+      - protocol: UDP
+        port: 53
